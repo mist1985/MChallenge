@@ -22,7 +22,7 @@ class BasePage():
         actions.move_to_element(element).perform()
 
 
-    #This function returns Boolean whether an element is visible or not
+    #This function returns Boolean whether an element is visible or not a
     def is_visible(self,by_locator):
         element = WebDriverWait(self.driver,5).until(EC.presence_of_element_located(by_locator))
         return bool(element)
