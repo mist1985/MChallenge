@@ -6,12 +6,17 @@ import time
 from Pages.BasePage import BasePage
 from Pages.HomePage import HomePage
 from selenium import webdriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+import pytest
 
 
+driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
+                                   desired_capabilities=DesiredCapabilities.CHROME)
 
-driver = webdriver.Chrome("C:\Webdrivers\chromedriver.exe")
-driver.maximize_window()
-driver.implicitly_wait(2)
+
+#driver = webdriver.Chrome("C:\Webdrivers\chromedriver.exe")
+#driver.maximize_window()
+#driver.implicitly_wait(2)
 
 driver.get("http://www.musala.com/")
 
