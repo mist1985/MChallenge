@@ -1,0 +1,17 @@
+name: Testing One
+on: push
+jobs: 
+  release:
+  name: First Test
+  runs-on: ubuntu/latest
+  steps:
+    -uses: actions/checkout@v1
+    -name: Install dependencies
+       uses: JackMcKew/pyinstaller-action-linux@main
+      with:
+       path: src
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: name-of-artifact
+        path: src/dist/linux
